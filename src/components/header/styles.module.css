@@ -1,0 +1,41 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100vw;
+	height: 4rem;
+	background-color: #222;
+}
+
+.linkSection {
+	display: flex;
+	align-items: center;
+	padding: 0 2rem;
+	gap: 2rem;
+}
+
+.link {
+	cursor: pointer;
+	text-decoration: none;
+	color: white;
+}
+
+.profile {
+	cursor: pointer;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	padding: 0 2rem;
+	gap: 1rem;
+}
+
+.profileName {
+	color: white;
+}
+
+.profilePicture {
+	background-color: yellow;
+	border-radius: 10;
+	height: 3rem;
+	width: 3rem;
+}
