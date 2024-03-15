@@ -27,7 +27,6 @@
 	overflow-y: auto;
 	overflow: scroll;
 	scrollbar-width: none;
-	scroll-padding: 10rem;
 	scroll-behavior: smooth;
 }
 
@@ -43,10 +42,6 @@
 /* Main content */
 
 .container {
-	box-sizing: border-box;
-	border-right: solid 1px #555;
-	background-color: #222;
-	width: 60%;
 }
 
 .searchDeck {

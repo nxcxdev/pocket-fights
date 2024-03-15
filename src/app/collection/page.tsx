@@ -1,5 +1,7 @@
+import DeckManagement from "../../components/deck-management/deck-management";
 import styles from "./page.module.css";
 import Deck from "@/components/deck/deck";
+
 export default function Collection() {
 	return (
 		<main className={styles.main}>
@@ -18,11 +20,18 @@ export default function Collection() {
 				<div className={styles.deckManagement}>
 					<div className={styles.deckContainer}>
 						<Deck />
+						<Deck />
+						<Deck />
+						<Deck />
+						<Deck />
+						<Deck />
+						<Deck />
+						<Deck />
 					</div>
 				</div>
 			</aside>
 			{/* Main content */}
-			<section className={styles.container}></section>
+			<DeckManagement />
 			{/* Right side panel */}
 			<aside className={styles.aside}></aside>
 		</main>
