@@ -13,7 +13,7 @@ export default function Header() {
 					</Link>
 				</section>
 				<Link className={styles.profile} href={"/profile"}>
-					<p className={styles.profileName}>kittydestroyer</p>
+					<p className={styles.profileName}>user1</p>
 					<img src="" alt="" className={styles.profilePicture} />
 				</Link>
 			</nav>

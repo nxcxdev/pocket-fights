@@ -1,0 +1,23 @@
+.deck {
+	width: 100%;
+	height: 6rem;
+	background-color: #ffffff00;
+	border: none;
+	border-bottom: solid 1px #555;
+	font-size: 1rem;
+	color: white;
+	transition: ease-in-out 0.15s;
+	text-align: left;
+	padding: 0 3rem;
+	cursor: pointer;
+}
+
+.deck:hover {
+	background-color: #ffffff21;
+	padding: 0 4rem;
+}
+
+.deck:focus {
+	background-color: #ffffff46;
+	padding: 0 4rem;
+}
