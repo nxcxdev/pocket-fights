@@ -20,13 +20,6 @@ export default function Collection() {
 				<div className={styles.deckManagement}>
 					<div className={styles.deckContainer}>
 						<Deck />
-						<Deck />
-						<Deck />
-						<Deck />
-						<Deck />
-						<Deck />
-						<Deck />
-						<Deck />
 					</div>
 				</div>
 			</aside>

@@ -1,7 +1,17 @@
+import CardView from "../card/card";
+import { Card } from "../card/card.type";
 import styles from "./deck-management.module.css";
-let cardCount = 0;
+async function getCards(): Promise<Card[]> {
+	const res = await fetch("http://localhost:3000/cards");
+	if (!res.ok) {
+		throw new Error("Failed to fetch data");
+	}
+	return res.json();
+}
 
-export default function DeckManagement() {
+export default async function DeckManagement() {
+	const cards = await getCards();
+	console.log(cards);
 	return (
 		<section className={styles.section}>
 			<header className={styles.header}>
@@ -15,12 +25,18 @@ export default function DeckManagement() {
 							/>
 						</button>
 					</div>
-					<h3 className={styles.cardCounter}>{cardCount}/40</h3>
+					<h3 className={styles.cardCounter}>0/40</h3>
 				</div>
 				<div className={styles.rightSection}>
 					<button className={styles.editModeButton}>Edit mode</button>
 				</div>
 			</header>
+			<section className={styles.cardDisplay}>
+				{cards.map((card) => (
+					<CardView card={card} />
+				))}
+				<div className={styles.spacing}></div>
+			</section>
 		</section>
 	);
 }

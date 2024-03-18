@@ -1,0 +1,44 @@
+.card {
+	height: 20rem;
+	width: 15rem;
+	border: solid 1px #555;
+	border-radius: 0.2rem;
+	transition: ease-in-out 0.2s;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: solid 1px #555;
+}
+
+.cardName {
+	font-size: 0.9rem;
+	color: white;
+	font-weight: 300;
+	text-align: center;
+}
+
+.description {
+	color: white;
+	font-weight: 300;
+}
+
+.cardCost {
+	background-color: rgba(97, 97, 255, 0.555);
+	width: 3rem;
+	padding: 1rem 0;
+	border-right: solid 1px #555;
+	text-align: center;
+	color: white;
+}
+
+.cardValue {
+	background-color: rgba(255, 97, 97, 0.699);
+	width: 3rem;
+	padding: 1rem 0;
+	border-right: solid 1px #555;
+	text-align: center;
+	color: white;
+}

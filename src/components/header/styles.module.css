@@ -35,12 +35,12 @@
 
 .profileName {
 	color: white;
-	font-size: 1.2rem;
+	font-size: 1rem;
 }
 
 .profilePicture {
-	background-color: yellow;
-	border-radius: 10;
+	background-color: rgb(255, 255, 255);
+	border-radius: 10rem;
 	height: 3rem;
 	width: 3rem;
 }
