@@ -19,7 +19,7 @@ export default function CardView(props: Props) {
 				</p>
 				<div className={styles.cardValue}>{props.card.value}</div>
 			</header>
-			<div></div>
+			<div className={styles.image}></div>
 			<footer className={styles.footer}>
 				<p className={styles.description}>{props.card.description}</p>
 			</footer>

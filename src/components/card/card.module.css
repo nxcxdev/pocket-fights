@@ -1,5 +1,5 @@
 .card {
-	height: 20rem;
+	height: 22rem;
 	width: 15rem;
 	border: solid 1px #555;
 	border-radius: 0.2rem;
@@ -7,6 +7,7 @@
 }
 
 .header {
+	height: 3rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -22,7 +23,20 @@
 
 .description {
 	color: white;
-	font-weight: 300;
+	font-weight: 200;
+	padding: 0.5rem;
+	text-align: left;
+}
+
+.image {
+	height: 14rem;
+	border-bottom: solid 1px #555;
+}
+
+.footer {
+	height: 5rem;
+	display: flex;
+	justify-content: center;
 }
 
 .cardCost {
