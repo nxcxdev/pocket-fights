@@ -9,7 +9,7 @@ async function getCards(): Promise<Card[]> {
 	return res.json();
 }
 
-export default async function DeckManagement() {
+export default async function DeckManager() {
 	const cards = await getCards();
 	console.log(cards);
 	return (

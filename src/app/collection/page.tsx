@@ -1,4 +1,4 @@
-import DeckManagement from "../../components/deck-management/deck-management";
+import DeckManager from "../../components/deck-management/deck-management";
 import styles from "./page.module.css";
 import Deck from "@/components/deck/deck";
 
@@ -24,7 +24,7 @@ export default function Collection() {
 				</div>
 			</aside>
 			{/* Main content */}
-			<DeckManagement />
+			<DeckManager />
 			{/* Right side panel */}
 			<aside className={styles.aside}></aside>
 		</main>

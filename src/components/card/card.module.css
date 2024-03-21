@@ -1,9 +1,13 @@
 .card {
+	cursor: pointer;
 	height: 22rem;
 	width: 15rem;
 	border: solid 1px #555;
 	border-radius: 0.2rem;
 	transition: ease-in-out 0.2s;
+}
+.card:hover {
+	transform: translate(0, -1rem);
 }
 
 .header {
@@ -25,7 +29,7 @@
 	color: white;
 	font-weight: 200;
 	padding: 0.5rem;
-	text-align: left;
+	text-align: center;
 }
 
 .image {
@@ -37,6 +41,7 @@
 	height: 5rem;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
 .cardCost {
