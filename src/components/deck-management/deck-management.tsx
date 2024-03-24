@@ -11,7 +11,6 @@ async function getCards(): Promise<Card[]> {
 
 export default async function DeckManager() {
 	const cards = await getCards();
-	console.log(cards);
 	return (
 		<section className={styles.section}>
 			<header className={styles.header}>
@@ -33,7 +32,7 @@ export default async function DeckManager() {
 			</header>
 			<section className={styles.cardDisplay}>
 				{cards.map((card) => (
-					<CardView card={card} />
+					<CardView card={card} key={card.id} />
 				))}
 				<div className={styles.spacing}></div>
 			</section>

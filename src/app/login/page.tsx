@@ -1,5 +1,7 @@
-import { useRouter } from "next/router";
+"use client";
+import { useRouter } from "next/navigation";
 import { FormEvent } from "react";
+import Cookies from "js-cookie";
 
 export default function LoginPage() {
 	const router = useRouter();
@@ -8,24 +10,24 @@ export default function LoginPage() {
 		event.preventDefault();
 
 		const formData = new FormData(event.currentTarget);
-		const email = formData.get("email");
+		const username = formData.get("username");
 		const password = formData.get("password");
 
-		const response = await fetch("/api/auth/login", {
+		const response = await fetch("http://localhost:3000/auth/login", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ email, password }),
+			body: JSON.stringify({ username: username, password: password }),
 		});
 
 		if (response.ok) {
-			router.push("/profile");
-		} else {
+			const responseContent = await response.json();
+			Cookies.set("accessToken", responseContent.accessToken);
+			router.push("/collection");
 		}
 	}
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<input type="email" name="email" placeholder="Email" required />
 			<input
 				type="username"
 				name="username"

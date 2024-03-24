@@ -1,8 +1,13 @@
 import styles from "./deck.module.css";
-export default function Deck() {
+import { Deck } from "./deck.type";
+
+interface Props {
+	deck: Deck;
+}
+export default function DeckView(props: Props) {
 	return (
 		<article>
-			<button className={styles.deck}>Deck</button>
+			<button className={styles.deck}>{props.deck.name}</button>
 		</article>
 	);
 }
