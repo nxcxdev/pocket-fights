@@ -1,4 +1,7 @@
 .deck {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
 	width: 100%;
 	height: 6rem;
 	background-color: #ffffff00;
@@ -14,10 +17,5 @@
 
 .deck:hover {
 	background-color: #ffffff21;
-	padding: 0 4rem;
-}
-
-.deck:focus {
-	background-color: #ffffff46;
 	padding: 0 4rem;
 }

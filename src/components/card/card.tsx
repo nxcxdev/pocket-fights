@@ -1,8 +1,10 @@
+import { useContext } from "react";
 import styles from "./card.module.css";
 import { Card } from "./card.type";
 
 interface Props {
 	card: Card;
+	editMode: boolean;
 }
 
 function capitalizeFirstLetter(text: string): string {
@@ -22,6 +24,15 @@ export default function CardView(props: Props) {
 			<div className={styles.image}></div>
 			<footer className={styles.footer}>
 				<p className={styles.description}>{props.card.description}</p>
+				<div className={styles.quantity}>
+					{props.editMode == true && (
+						<button className={styles.button}>-</button>
+					)}
+					<p>{props.card.quantity}</p>
+					{props.editMode == true && (
+						<button className={styles.button}>+</button>
+					)}
+				</div>
 			</footer>
 		</article>
 	);

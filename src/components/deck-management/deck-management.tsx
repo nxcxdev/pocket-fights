@@ -1,41 +1,40 @@
-import CardView from "../card/card";
-import { Card } from "../card/card.type";
+"use client";
+
+import { useState } from "react";
 import styles from "./deck-management.module.css";
-async function getCards(): Promise<Card[]> {
-	const res = await fetch("http://localhost:3000/cards");
-	if (!res.ok) {
-		throw new Error("Failed to fetch data");
-	}
-	return res.json();
+import { DeckCardsDisplay } from "./DeckCardsDisplay";
+import { DeckManagerHeader } from "./DeckManagerHeader";
+import { SelectedDeck } from "./selected-deck.type";
+
+export interface Props {
+	selectedDeck: SelectedDeck;
 }
 
-export default async function DeckManager() {
-	const cards = await getCards();
+export default function DeckManager(props: Props) {
+	const [editMode, setEditMode] = useState<boolean>(false);
+
+	const displayedCards = !editMode
+		? props.selectedDeck.cards.filter((card) => card.quantity > 0)
+		: props.selectedDeck.cards;
+
+	const sumCards = displayedCards.reduce(
+		(accumulator, card) => accumulator + Number(card.quantity),
+		0
+	);
+
+	function changeMode(): void {
+		setEditMode(!editMode);
+	}
+
 	return (
 		<section className={styles.section}>
-			<header className={styles.header}>
-				<div className={styles.leftSection}>
-					<div className={styles.nameContainer}>
-						<h2 className={styles.deckName}>Deck</h2>
-						<button className={styles.editButton}>
-							<img
-								src="/media/images/edit.svg"
-								alt="Edit name button."
-							/>
-						</button>
-					</div>
-					<h3 className={styles.cardCounter}>0/40</h3>
-				</div>
-				<div className={styles.rightSection}>
-					<button className={styles.editModeButton}>Edit mode</button>
-				</div>
-			</header>
-			<section className={styles.cardDisplay}>
-				{cards.map((card) => (
-					<CardView card={card} key={card.id} />
-				))}
-				<div className={styles.spacing}></div>
-			</section>
+			<DeckManagerHeader
+				deckName={props.selectedDeck.name}
+				cardsCount={sumCards}
+				changeMode={changeMode}
+				editMode={editMode}
+			/>
+			<DeckCardsDisplay cards={displayedCards} editMode={editMode} />
 		</section>
 	);
 }

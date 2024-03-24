@@ -4,4 +4,5 @@ export interface Card {
 	cost: number;
 	value: number;
 	description: string;
+	quantity: number;
 }
