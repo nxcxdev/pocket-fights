@@ -64,7 +64,11 @@ export default async function Collection(props: Props) {
 					</div>
 				</div>
 			</aside>
-			{selectedDeck && <DeckManager selectedDeck={selectedDeck} />}
+			{selectedDeck ? (
+				<DeckManager selectedDeck={selectedDeck} />
+			) : (
+				<div className={styles.placeholder}></div>
+			)}
 			<aside className={styles.aside}></aside>
 		</main>
 	);
